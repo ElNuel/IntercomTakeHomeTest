@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-12"></div>
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <br><br>
+      <div class="row">
+        <div class="col-6">
+          <br><br>
+          <h5>Customers within 100km</h5>
+        </div>
+
+        <div class="col-6 text-right">
+           <img src="assets/intercom.png" height="80">
+        </div>
+       
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-12 text-center">
+          <button class="btn btn-success" (click)="download()">Download Output</button>
+        </div>
+      </div>
+      <br><br>
+      <table class="table table-striped">
+        <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>User ID</th>
+        </tr>
+        <tr *ngFor="let customer of nearbyCustomers; let i = index">
+          <td>{{ (i+1) }}</td>
+          <td>{{customer?.name}}</td>
+          <td>{{customer?.user_id}}</td>
+        </tr>
+      </table>
+      
+      <br><br>
+    </div>
+  </div>  
+</div>
